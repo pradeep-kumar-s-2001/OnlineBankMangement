@@ -11,7 +11,7 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #6a11cb, #2575fc);
+            background:#6082B6;
             color: #fff;
             display: flex;
             flex-direction: column;
@@ -54,6 +54,7 @@
             transform: translateY(-5px);
         }
     </style>
+    <
 </head>
 <body>
     <h1>Welcome to Your Bank</h1>

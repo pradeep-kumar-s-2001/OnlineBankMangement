@@ -10,7 +10,7 @@
     <title>Deposit Money</title>
     <style>
         body {
-            background: linear-gradient(to right, #2575fc, #6a11cb);
+            background:#6082B6;
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;

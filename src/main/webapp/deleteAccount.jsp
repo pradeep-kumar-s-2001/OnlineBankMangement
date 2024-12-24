@@ -6,14 +6,21 @@
 <html>
 <head>
     <title>Delete Account</title>
+    <style>
+    
+    </style>
+    
 </head>
 <body>
+<div id="main">
     <h2>Delete Account</h2>
     <form method="post">
         <label for="account">Account Number to Delete:</label>
         <input type="number" id="account" name="account" required>
         <button type="submit">Delete</button>
     </form>
+    </div>
+    
     <%
         if ("POST".equalsIgnoreCase(request.getMethod())) {
             long accNo = Long.parseLong(request.getParameter("account"));
@@ -34,5 +41,6 @@
             }
         }
     %>
+   
 </body>
 </html>

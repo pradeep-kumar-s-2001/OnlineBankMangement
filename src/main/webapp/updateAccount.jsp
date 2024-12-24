@@ -16,11 +16,11 @@
         height: 100vh;
         margin: 0;
         font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
+        background-color:#6082B6;
     }
 
     form {
-        background-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.1);
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -110,6 +110,9 @@
     <div class="wrapper">
        <h2>Update Account</h2>
     <form action="updateAccount.jsp" method="post">
+    <label for="id">Account_number:</label>
+       <input type="number" id="id" name="id" disable="disable" value="<%= customer.getAcc_no() %>" required>
+       <br>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="<%= customer.getName() %>" required>
        <br>

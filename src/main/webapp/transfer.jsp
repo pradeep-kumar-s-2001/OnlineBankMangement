@@ -9,11 +9,82 @@
     <meta charset="UTF-8">
     <title>Transfer Amount</title>
     <style>
-        /* Your existing CSS for the page */
+             body {
+            background:#6082B6;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 300px;
+            height:500px;
+        }
+
+        h2 {
+            margin-bottom: 40px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            margin-bottom: 30px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 8px;
+            border: none;
+            background: #fff;
+            color: #2575fc;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background: #2575fc;
+            color: #fff;
+        }
+
+         a {
+            padding: 10px 20px;
+            background: #fff;
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background: #2575fc;
+            color: #fff;
+        }
+
     </style>
 </head>
 <body>
-    <div>
+    <div class="container">
         <h2>Transfer Money</h2>
         
         <form method="post">
