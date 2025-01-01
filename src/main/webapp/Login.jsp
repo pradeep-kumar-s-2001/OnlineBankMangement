@@ -6,6 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
+     <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -25,14 +30,14 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
+        
         }
 
         input[type="text"],
         input[type="password"] {
             width: 100%;
             padding: 8px;
-            margin: 8px 0;
+           margin:8px 0px;
             border: 1px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
@@ -63,6 +68,17 @@
         a:hover {
             text-decoration: underline;
         }
+        
+        .error{
+        color:red;
+        font-size:0.8rem;
+        }
+        .label{
+         
+         padding:8px 0px;
+        
+        }
+        
     </style>
 </head>
 <body>
@@ -78,12 +94,13 @@
          request.removeAttribute("error");
         }
       %>
+      <h2>Login</h2>
 
-    <form name="f1" action="Login" method="post" onSubmit="return validate()">
-        <label for="acc_id">Name:</label>
-        <input type="text" id="acc_no" name="acc_no"/><br>
+    <form  id="login" action="Login" method="post" >
+        <label for="acc_id" class="label">AccountNumber:</label>
+        <input type="text" id="acc_no" name="acc_no"/><br> 
         
-        <label for="pin">PIN:</label>
+        <label for="pin" class="label">PIN:</label>
         <input type="password" id="pin" name="pin"/><br>
         
         <input type="submit" value="Login"/>
@@ -92,20 +109,47 @@
     </form>
 
 </div>
-    <script>
-        function validate() {
-            var x1 = document.f1.acc_id.value;
-            if (x1 == null || x1 == "") {
-                alert("Name should not be empty");
-                return false;
-            }
-            var x2 = document.f1.pin.value;
-            if (x2 == null || x2 == "") {
-                alert("PIN should not be empty");
-                return false;
-            }
-            return true;
-        }
+    
+        
+        <script>
+        $(document).ready(function () {
+            $("#login").validate({
+                rules: {
+                	acc_no: {
+                        required: true,
+                        minlength:10,
+                        maxlength:10
+               },
+               pin:{
+            	   required:true,
+            	   minlength:4,
+            	   
+                     }
+               },
+               messages:{
+            	   acc_no:{
+            		   required:"please enter the accountNumber",
+            		   minlength:"minmum length of accountnumber is 10",
+            		   maxlength:"maxmum length of accountnumber is 10"
+            		   
+            	   },
+               pin:{
+            	   required:"please enter the pin",
+        		   minlength:"minmum length of pin is 4",
+            	  }
+            	   
+            	   
+            	   
+               }
+               
+               
+                    
+                    
+                    
+                })
+                
+        
+                });
     </script>
 </body>
 </html>

@@ -93,9 +93,19 @@
                 double newBalance = customer.getBalance() + depositAmount;
                 customer.setBalance(newBalance);
 
+                TransactionDAO transactionDAO = new TransactionDAOImp();
                 CustomerDaoImp dao = new CustomerDaoImp();
                 if (dao.updateCustomer(customer)) {
                     session.setAttribute("customer", customer);
+                    Transaction transaction = new Transaction();
+                    transaction.setTran_id(TransactionID.getTransactionID());
+                    transaction.setUser_acc(customer.getAcc_no());
+                    transaction.setTran_type("deposit");
+                    transaction.setAmount(depositAmount);
+                    transaction.setBalance(customer.getBalance());
+
+                    boolean transactionLogged = transactionDAO.insertTransaction(transaction);
+
                     out.println("<p>Amount deposited successfully! New balance: " + newBalance + "</p>");
                 } else {
                     out.println("<p>Failed to update the balance.</p>");

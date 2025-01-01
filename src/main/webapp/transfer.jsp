@@ -23,16 +23,16 @@
 
         .container {
             background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
+            padding: 5px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             text-align: center;
             width: 300px;
-            height:500px;
+            height:450px;
         }
 
         h2 {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         form {
@@ -41,15 +41,15 @@
         }
 
         input {
-            margin-bottom: 30px;
-            padding: 10px;
+            margin-bottom: 2px;
+            padding: 5px;
             border-radius: 5px;
             border: none;
             font-size: 1rem;
         }
 
         button {
-            padding: 8px;
+            padding: 10px;
             border: none;
             background: #fff;
             color: #2575fc;
@@ -121,17 +121,15 @@
                     CustomerDao customerDAO = new CustomerDaoImp();
                     Customer rec_acc = customerDAO.getCustomer(accNo); 
 
-                    if (rec_acc != null && customer.getPin() == pin) { // Check if sender's PIN is correct
-                        // Sender balance and recipient balance
+                    if (rec_acc != null && customer.getPin() == pin) { 
                         double senderBalance = customer.getBalance();
                         double recipientBalance = rec_acc.getBalance();
 
-                        if (senderBalance >= amount) { // Ensure the sender has sufficient funds
-                            // Deduct from sender and add to recipient
+                        if (senderBalance >= amount) { 
                             customer.setBalance(senderBalance - amount);
                             rec_acc.setBalance(recipientBalance + amount);
 
-                            // Update balances in the database
+                            
                             boolean senderUpdated = customerDAO.updateCustomer(customer);
                             boolean recipientUpdated = customerDAO.updateCustomer(rec_acc);
 

@@ -6,6 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
+    <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,7 +35,7 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
+          
         }
 
         input[type="text"],
@@ -62,7 +66,7 @@
 </head>
 <body>
     <h3>Registration Page</h3>
-    <form name="f2" action="Register" method="post" onSubmit="return validate()">
+    <form name="f2" action="Register" method="post" id="register">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name"/><br>
 
@@ -82,34 +86,67 @@
     </form>
 
     <script>
-        function validate() {
-            var x1 = document.f2.name.value;
-            if (x1 == null || x1 == "") {
-                alert("Name should not be empty");
-                return false;
-            }
-            var x2 = document.f2.phone.value;
-            if (x2 == null || x2 == "") {
-                alert("Phone should not be empty");
-                return false;
-            }
-            var x3 = document.f2.mail.value;
-            if (x3 == null || x3 == "") {
-                alert("Email should not be empty");
-                return false;
-            }
-            var x4 = document.f2.pin.value;
-            if (x4 == null || x4 == "") {
-                alert("PIN should not be empty");
-                return false;
-            }
-            var x5 = document.f2.confirmpin.value;
-            if (x4 != x5) {
-                alert("PIN and Confirm PIN do not match");
-                return false;
-            }
-            return true;
-        }
+    $(document).ready(function () {
+        $("#register").validate({
+            rules: {
+            	name: {
+                    required: true,
+           },
+           phone:{
+        	   required:true,
+        	   minlength:10,
+        	   maxlength:10,
+        	   
+                 }
+           },
+           mail:{
+        	   required:true,
+        	   email:true
+        	   
+                 }
+           },
+           pin:{
+        	   required:true,
+        	   minlength:4,
+        	   
+                 }
+           },
+           confirmpin:{
+        	   required:true,
+        	   minlength:4,
+        	   equalsTo:"#pin"
+        	   
+                 }
+           },
+           
+           
+           
+           
+           
+           
+           
+           
+           messages:{
+        	   acc_no:{
+        		   required:"please enter the accountNumber",
+        		   minlength:"minmum length of accountnumber is 10",
+        		   maxlength:"maxmum length of accountnumber is 10"
+        		   
+        	   },
+           pin:{
+        	   required:"please enter the pin",
+    		   minlength:"minmum length of pin is 4",
+        	  }
+        	   
+        	   
+        	   
+           }
+               
+            })
+            
+    
+            });
+    
     </script>
 </body>
 </html>

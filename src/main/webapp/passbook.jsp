@@ -8,8 +8,40 @@
 <head>
     <title>Passbook</title>
     <style>
+    body{
+    background:#6082B6;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: black;
+    
+    
+    }
+    
+    
+    
+    
+    div{
+   
+    
+    
+    }
+   #one{
+   display:flex;
+    color:white;
+    top:50px;
+    left:600px;
+   justify-content: center;
+      align-items: center;
+    
+    
+    }
         table {
-            width: 80%;
+            width: 100%;
             margin: 20px auto;
             border-collapse: collapse;
         }
@@ -25,7 +57,10 @@
 </head>
 
 <body>
+<div>
+<div id="one">
     <h2>Transaction History</h2>
+    </div>
     <%
         HttpSession session2 = request.getSession(false);
         if (session != null) {
@@ -63,5 +98,6 @@
             response.sendRedirect("Login.jsp");
         }
     %>
+    </div>
 </body>
 </html>

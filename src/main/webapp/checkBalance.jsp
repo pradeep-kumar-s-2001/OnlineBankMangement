@@ -21,12 +21,15 @@
         }
 
         .container {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 300px;
+            height:250px;
         }
+
 
         h2 {
             font-size: 2rem;

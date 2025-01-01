@@ -21,6 +21,28 @@
         th {
             background-color: #f2f2f2;
         }
+        a {
+            padding: 10px 20px;
+            background: #fff;
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            
+        }
+                div {
+            
+            background: rgba(0, 0, 0, 0.4);
+            paddtext-align: center;ing: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+
+        a:hover {
+            background: #2575fc;
+            color: #fff;
     </style>
 </head>
 <body>
@@ -55,5 +77,8 @@
             <% } %>
         </tbody>
     </table>
+    <div>
+    <a href="adminHome.jsp">Back to Home</a>
+    </div>
 </body>
 </html>

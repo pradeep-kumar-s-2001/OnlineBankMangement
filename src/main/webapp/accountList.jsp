@@ -44,6 +44,29 @@
         tr:hover {
             background-color: #f1f1f1;
         }
+         a {
+            padding: 10px 20px;
+            background: #fff;
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            
+        }
+                div {
+            
+            background: rgba(0, 0, 0, 0.4);
+            paddtext-align: center;ing: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+
+        a:hover {
+            background: #2575fc;
+            color: #fff;
+        }
         @media screen and (max-width: 768px) {
             table {
                 width: 100%;
@@ -55,6 +78,7 @@
     </style>
 </head>
 <body>
+
     <h2>Account List</h2>
     <%
         CustomerDaoImp dao = new CustomerDaoImp();
@@ -84,5 +108,8 @@
             <% } %>
         </tbody>
     </table>
+    <div>
+    <a href="adminHome.jsp">Back to Home</a>
+    </div>
 </body>
 </html>
